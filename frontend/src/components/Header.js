@@ -77,7 +77,7 @@ const Header = () => {
                   <LinkContainer to='/admin/userlist'>
                     <Dropdown.Menu>
                       <Dropdown.Item href='/admin/userlist'>Pengguna</Dropdown.Item>
-                      <Dropdown.Item onClick={productHandler}>Produk</Dropdown.Item>
+                      <Dropdown.Item onClick={productHandler}>Master Data</Dropdown.Item>
                       <Dropdown.Item onClick={orderHandler}>Semua Pesanan</Dropdown.Item>
                     </Dropdown.Menu>
                   </LinkContainer>

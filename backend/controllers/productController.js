@@ -48,8 +48,7 @@ const createProduct = asyncHandler(async (req, res) => {
     name: 'Tulis nama',
     price: 0,
     user: req.user._id,
-    image: '/images/gambar produk.jpg',
-    brand: 'Tulis merek',
+    image: '/images/gambar produk.jpg',    
     category: 'Tulis kategori',
     countInStock: 0,
     numReviews: 0,
@@ -68,8 +67,7 @@ const updateProduct = asyncHandler(async (req, res) => {
     name,
     price,
     description,
-    image,
-    brand,
+    image,    
     category,
     countInStock
   } = req.body
@@ -80,8 +78,7 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.name = name
     product.price = price
     product.description = description
-    product.image = image
-    product.brand = brand
+    product.image = image   
     product.category = category
     product.countInStock = countInStock
 

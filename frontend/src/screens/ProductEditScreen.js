@@ -16,8 +16,7 @@ const ProductEditScreen = () => {
   const [name, setName] = useState('')
   const [price, setPrice] = useState(0)
   const [image, setImage] = useState('')
-  const [category, setCategory] = useState('')
-  const [brand, setBrand] = useState('')
+  const [category, setCategory] = useState('')  
   const [countInStock, setCountInStock] = useState(0)
   const [description, setDescription] = useState('')
   const [uploading, setUploading] = useState(false)
@@ -46,8 +45,7 @@ const ProductEditScreen = () => {
       } else {
         setName(product.name)
         setPrice(product.price)
-        setImage(product.image)
-        setBrand(product.brand)
+        setImage(product.image)        
         setCategory(product.category)
         setCountInStock(product.countInStock)
         setDescription(product.description)
@@ -85,8 +83,7 @@ const ProductEditScreen = () => {
       _id: productId,
       name,
       price,
-      image,
-      brand,
+      image,     
       category,
       description,
       countInStock
@@ -173,18 +170,7 @@ const ProductEditScreen = () => {
 
               <Form.Group>
               </Form.Group>
-            </Form.Group>
-
-            <Form.Group controlId='brand' className='py-2'>
-              <Form.Label>Merek</Form.Label>
-              <Form.Control
-                type='text'
-                placeholder='Masukan merek'
-                value={brand}
-                onChange={(e) => setBrand(e.target.value)}
-              >
-              </Form.Control>
-            </Form.Group>
+            </Form.Group>            
 
             <Form.Group controlId='countInStock' className='py-2'>
               <Form.Label>Stok</Form.Label>

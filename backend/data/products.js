@@ -5,9 +5,8 @@ const products = [
     description:
       'Pompa air minum dirancang khusus untuk kesehatan. Bahan berkualitas tinggi dan desain modern, elegan memungkinkan Anda menikmati air minum yang Bersih dan Aman',    
     category: 'Rumah tangga',
-    price: 89.99,
-    countInStock: 10,
-    rating: 4.5,
+    price: 1,
+    countInStock: 10,    
     numReviews: 12,
   },
   {   
@@ -17,8 +16,7 @@ const products = [
       'GANTUNGAN PANCI DAPUR/GANTUNGAN DAPUR SERBAGUNA STAINLESS SUS 304 TEBAL KUAT DAN ANTI KARAT',   
     category: 'Rumah Tangga',
     price: 599.99,
-    countInStock: 7,
-    rating: 4.0,
+    countInStock: 7,    
     numReviews: 8,
   },
   {    
@@ -28,8 +26,7 @@ const products = [
       'Characterized by versatile imaging specs, the Canon EOS 80D further clarifies itself using a pair of robust focusing systems and an intuitive design',   
     category: 'Rumah Tangga',
     price: 929.99,
-    countInStock: 5,
-    rating: 3,
+    countInStock: 5,    
     numReviews: 12,
   },
   {   
@@ -39,8 +36,7 @@ const products = [
       'Menimbang menjadi mudah dan menghitung hasil timbang secara automatis',   
     category: 'Rumah Tangga',
     price: 399.99,
-    countInStock: 11,
-    rating: 5,
+    countInStock: 11,    
     numReviews: 12,
   },
   {   
@@ -50,8 +46,7 @@ const products = [
       'tersedia tabung gas 3kg kosong baru dan bekas (Tanpa Isi) terima pembelian eceran dan grosir',    
     category: 'Rumah Tangga',
     price: 49.99,
-    countInStock: 7,
-    rating: 3.5,
+    countInStock: 7,    
     numReviews: 10,
   },
   {    
@@ -61,8 +56,7 @@ const products = [
       'lat pembuka kaleng dan botol handle karet dengan ujung stainless tebal aman dan nyaman digunakan',    
     category: 'Rumah Tangga',
     price: 29.99,
-    countInStock: 0,
-    rating: 4,
+    countInStock: 0,    
     numReviews: 12,
   },
 ]

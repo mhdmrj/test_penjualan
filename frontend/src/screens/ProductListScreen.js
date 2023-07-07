@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Table, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
-import Paginate from '../components/Paginate'
 import {
   listProducts,
   deleteProduct,
@@ -14,6 +13,8 @@ import {
 import { PRODUCT_CREATE_RESET } from '../constants/productConstants'
 
 const ProductListScreen = () => {
+  const { id } = useParams()
+  const productId = id
   const { pageNumber } = useParams() || 1
 
   const dispatch = useDispatch()
@@ -22,6 +23,9 @@ const ProductListScreen = () => {
 
   const productList = useSelector(state => state.productList)
   const { loading, error, products, page, pages } = productList
+
+  const productDetails = useSelector(state => state.productDetails)
+  const { product } = productDetails
 
   const productDelete = useSelector(state => state.productDelete)
   const {
@@ -50,8 +54,9 @@ const ProductListScreen = () => {
 
     if (successCreate) {
       navigate(`/admin/product/${createdProduct._id}/edit`)
-    } else {
+    } else if (!product.name || product._id !== productId) {
       dispatch(listProducts('', pageNumber))
+      setCountInStock(product.countInStock)
     }
   }, [
     dispatch,
@@ -73,11 +78,13 @@ const ProductListScreen = () => {
     dispatch(createProduct())
   }
 
+  const [countInStock, setCountInStock] = useState(0)
+
   return (
     <>
       <Row className='align-items-center'>
         <Col>
-          <h1>Produk</h1>
+          <h1>Master Data Produk</h1>
         </Col>
         <Col className='text-right'>
           <Button className='my-3' onClick={createProductHandler}>
@@ -102,8 +109,8 @@ const ProductListScreen = () => {
                 <th>NAMA</th>
                 <th>HARGA</th>
                 <th>KATEGORI</th>
-                <th>MEREK</th>
-                <th></th>
+                <th>STOK</th>
+                <th>AKSI</th>
               </tr>
             </thead>
             <tbody>
@@ -117,7 +124,7 @@ const ProductListScreen = () => {
                   <td>
                     {product.category}
                   </td>
-                  <td>{product.brand}</td>
+                  <td>{product.countInStock}</td>
                   <LinkContainer to={`/admin/product/${product._id}/edit`}>
                     <Button variant='light' className='btn-sm'>
                       <i className='fas fa-edit'></i>
@@ -131,7 +138,6 @@ const ProductListScreen = () => {
             </tbody>
 
           </Table>
-          <Paginate pages={pages} page={page} isAdmin={true}></Paginate>
         </>
       )}
     </>
